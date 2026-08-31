@@ -1,0 +1,7 @@
+.DS_Store
+index.html.bak
+# large source-only assets (not used by the built page)
+brand-assets/wish-wisely-canva-export.png
+brand-assets/wish-well-logo-full.svg
+brand-assets/fairy-godmother.png
+brand-assets/hero-watercolour-splash.png
