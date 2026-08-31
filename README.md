@@ -4,22 +4,18 @@ Single self-contained `index.html`. No build step. This repo **is** the site.
 
 ## Deploy
 
-### GitHub Pages (custom domain `lorraenmadre.com`)
+Hosted on **Vercel**, linked to this GitHub repo — every push to `main` deploys.
+No build step: Vercel serves `index.html` and `brand-assets/` as static files
+(Framework Preset: *Other*).
 
-1. Push this repo to GitHub (see below).
-2. Repo **Settings → Pages** → Source: `Deploy from a branch` → Branch: `main` / `/ (root)`.
-3. The `CNAME` file already sets the custom domain to `lorraenmadre.com`.
-4. At your DNS provider, point the apex domain at GitHub Pages:
-   - `A` records → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - (optional) `CNAME` for `www` → `<your-username>.github.io`
-5. Enable **Enforce HTTPS** once the cert is issued.
+- Production: `lorraenmadre.com` (domain attached in the Vercel project's
+  **Settings → Domains**).
+- `.nojekyll` is a harmless leftover; Vercel ignores it.
 
-`.nojekyll` is present so Pages serves the files as-is.
+### Any other static host
 
-### Any static host
-
-Netlify / Vercel / Cloudflare Pages: drop the folder in, no configuration. Delete
-`CNAME` if you are not using GitHub Pages.
+Netlify / Cloudflare Pages / GitHub Pages all work too — it's a plain static
+folder. For GitHub Pages you'd add a `CNAME` file and point DNS at GitHub's IPs.
 
 ## Structure
 
@@ -64,10 +60,6 @@ Two accents: **gold** (`--gold`, every Join button + `$13` + "you are here") and
 | Canonical categories + destinations for houses 5–12 | `HOUSES`, `LINKS.houses` |
 | Social handles | `LINKS.instagram` / `tiktok` / `youtube` / `substack` |
 
-## Push to GitHub
+## Repo
 
-```bash
-# create an empty repo named "lorraenmadre.com" on github.com first, then:
-git remote add origin https://github.com/<your-username>/lorraenmadre.com.git
-git push -u origin main
-```
+<https://github.com/lorraenmadre/lorraenmadre.com>
