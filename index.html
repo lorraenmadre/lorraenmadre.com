@@ -195,7 +195,14 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
 .club-copy h2{font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:.6rem}
 .club-copy .sub2{font-family:var(--display);font-size:clamp(1.15rem,2.2vw,1.5rem);color:var(--ink-2);margin-bottom:1.3rem}
 .club-copy p{color:var(--ink-2);max-width:44ch}
+.club-copy .how{list-style:none;counter-reset:how;margin:1.5rem 0 0;padding:0;display:grid;gap:.7rem;max-width:38ch}
+.club-copy .how li{counter-increment:how;position:relative;padding-left:2rem;color:var(--ink-2);font-size:.98rem;line-height:1.4}
+.club-copy .how li::before{content:counter(how);position:absolute;left:0;top:-.05em;
+  font-family:var(--sub);font-weight:700;font-size:.7rem;width:1.35rem;height:1.35rem;border-radius:999px;
+  border:1px solid var(--line);display:grid;place-items:center;color:var(--ink)}
+.club-copy .how b{color:var(--ink);font-weight:700}
 .club-cta{margin-top:1.7rem}
+.club-cta .cta-note{margin-top:.7rem;font-family:var(--sub);font-weight:600;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .inventory{border-top:1px solid var(--line)}
 .inventory div{display:grid;grid-template-columns:auto 1fr;gap:1.3rem;align-items:baseline;padding:1.05rem 0;border-bottom:1px solid var(--line)}
 .inventory dt{font-family:var(--sub);font-weight:700;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap}
@@ -219,7 +226,8 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
 @media (max-width:520px){.madre .guided{white-space:normal;letter-spacing:.12em}}
 .madre h2{color:var(--night-ink);font-size:clamp(1.7rem,3.4vw,2.4rem)}
 .madre .lm-line{font-family:var(--sub);font-weight:600;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--night-ink-2);margin-top:.55rem}
-.madre .role{font-family:var(--display);font-size:clamp(1.35rem,2.6vw,1.9rem);color:var(--night-ink);margin:1rem 0 .5rem}
+.madre .role{font-family:var(--display);font-size:clamp(1.35rem,2.6vw,1.9rem);color:var(--night-ink);margin:1rem 0 .3rem}
+.madre .whois{font-size:.92rem;color:var(--night-ink-2);max-width:34ch;margin:0 0 1.3rem}
 .madre .pitch{font-family:var(--display);font-size:clamp(1.1rem,2.1vw,1.4rem);color:var(--night-ink);margin:.5rem 0 1.5rem;max-width:26ch;line-height:1.3}
 .madre .def{color:var(--night-ink-2);font-family:var(--display);font-size:1.08rem;max-width:34ch;margin-bottom:1.5rem}
 .madre p{color:var(--night-ink-2);max-width:44ch;font-size:.96rem}
@@ -228,6 +236,8 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
 
 /* ---------- 5 · fairy godmother idea ---------- */
 .fgi{max-width:50rem}
+.fgi .bridge{color:var(--ink-2);font-size:clamp(1rem,1.7vw,1.15rem);line-height:1.5;max-width:40ch;margin:.4rem 0 2rem}
+.fgi .bridge b{color:var(--ink);font-weight:600}
 .fgi h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:400}
 .fgi .well{font-family:var(--display);font-size:clamp(1.4rem,2.6vw,1.9rem);color:var(--ink-2);display:block;margin:.5rem 0 .2rem}
 .fgi .then{font-family:var(--display);font-size:clamp(1.1rem,2vw,1.4rem);color:var(--ink-2)}
@@ -457,9 +467,15 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
         <div class="kicker"><span class="eyebrow">Make space for a story</span></div>
         <h2 id="club-title">A movie playlist with a purpose.</h2>
         <p class="sub2">Space to make wishes come true.</p>
-        <p>It's a Google Calendar with one story on every day of the year. Open the calendar, see what's playing, press play.</p>
+        <p>It's a Google Calendar with one story on every day of the year.</p>
+        <ol class="how">
+          <li>Get it &mdash; one payment, <b>$13</b>.</li>
+          <li>Add the calendar to your phone, once.</li>
+          <li>Every day, today&rsquo;s movie is already there.</li>
+        </ol>
         <div class="club-cta">
           <a class="pill solid" data-link="joinClub" href="#"><svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg>Join the Challenge<svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <p class="cta-note">$13 once &middot; yours for all of 2027</p>
         </div>
       </div>
       <div class="rv">
@@ -490,6 +506,7 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
   <section class="sec" aria-labelledby="fgi-title">
     <div class="wrap fgi rv">
       <div class="kicker"><span class="eyebrow">Americana Fairy Godmother</span></div>
+      <p class="bridge">I built this because I noticed stories quietly teach us what to want. So I made a way to <b>use them on purpose.</b></p>
       <h2 id="fgi-title">I make wishes come true.</h2>
       <span class="well">Well&hellip;</span>
       <span class="then">I help people figure out how.</span>
@@ -510,11 +527,11 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
       <h2 class="big" id="about-title">Lorraen Madre</h2>
       <p class="lm-line">Time . space + Story</p>
       <p class="role">St. Madre Rae</p>
+      <p class="whois">Lorraen Madre is the name I work under. Rael Emard is me.</p>
       <p class="pitch">Human and AI support to make your dreams come true.</p>
       <p class="def">A millennial mother raised inside American story culture who still believes wishes can become real.</p>
       <p>I grew up in a generation surrounded by stories. Storybooks. Novels. Saturday morning cartoons. Live action. 2D animation. 3D worlds. Television. Cinema. Music videos. The internet. And now stories that arrive through the little screens in our hands.</p>
-      <p>I became interested in what those stories teach us to notice, want, imagine and believe is possible.</p>
-      <p class="close">I use story, systems, culture, timing and patterns to help families and businesses make something better out of what they already have.</p>
+      <p class="close">The movie playlist is the front door. The same tools &mdash; story, systems, timing &mdash; scale up to a whole family, or a business.</p>
       <p class="attrib">Rael Emard &mdash; Designer</p>
     </div>
   </section>
@@ -559,7 +576,7 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
       <div class="kicker"><span class="eyebrow" id="order-title">The truth</span></div>
       <h2 class="big">Wishes like order.</h2>
       <p class="sub">Different wishes need different kinds of support.</p>
-      <p>I build systems to help families and businesses make something better out of what they already have. <b>Your house might mean your actual home.</b> Or your time. Work. Money. Family. Learning. Health. Travel. Ideas. Systems. Story. That's what the houses are for.</p>
+      <p><b>Your house might mean your actual home.</b> Or your time, your money, your family, your work, your health. There&rsquo;s a house for each one.</p>
     </div>
   </section>
 
@@ -569,7 +586,7 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
       <div class="houses-head rv">
         <div class="kicker"><span class="eyebrow" id="houses-title">Entry into Wonderland</span></div>
         <h2 class="big">The Rabbit Hole</h2>
-        <p>I'll show you how deep the rabbit hole goes.</p>
+        <p>Twelve houses &mdash; each one a place the work actually happens. Find the one your wish lives in.</p>
       </div>
       <div class="houses" id="houses-grid"></div>
     </div>
