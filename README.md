@@ -56,9 +56,12 @@ Two accents: **gold** (`--gold`, every Join button + `$13` + "you are here") and
 | What | Where |
 |---|---|
 | Compress the hero video (currently ~12 MB, 61 s) to ~1280×720 / ~1.5 Mbps, ideally a 15–20 s loop under 4 MB | `brand-assets/hero.mp4` |
-| Real checkout URL (Gumroad) | `LINKS.joinClub` |
 | Canonical categories + destinations for houses 5–12 | `HOUSES`, `LINKS.houses` |
 | Social handles | `LINKS.instagram` / `tiktok` / `youtube` / `substack` |
+
+**Live links:** `joinClub` → `wishwisely.gumroad.com/l/fzexhb` ($13) · `design` →
+`lorraenmadre.app` · house `01` → `omw.life` · house `04` → the Amazon listing ·
+`calendar` → the "Space for Story Time" Google Calendar (internal — delivered after purchase).
 
 ## Repo
 
