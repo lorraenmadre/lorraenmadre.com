@@ -1,7 +1,71 @@
+<!doctype html>
+<html lang="en">
 <meta charset="utf-8">
-<title>Space for Story Time Challenge</title>
+<title>Space for Story Time Club — 365 Family Movie Nights for 2027</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A movie playlist with a purpose. 365 films, one year, $13 — a year-long family story challenge. Made by Lorraen Madre.">
+<meta name="description" content="A Google Calendar with one movie or series for every day of 2027. Each event links straight to where that story is streaming, to rent, or to buy — no scrolling through apps — plus a short story note. 365 family movie nights, $13 once.">
+<link rel="canonical" href="https://www.lorraenmadre.com/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#181713">
+<meta name="author" content="Lorraen Madre">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lorraen Madre">
+<meta property="og:url" content="https://www.lorraenmadre.com/">
+<meta property="og:title" content="Space for Story Time Club — 365 Family Movie Nights for 2027">
+<meta property="og:description" content="One movie or series for every day of 2027, delivered as a Google Calendar. Every event links you to where that story is streaming, to rent, or to buy. $13 once.">
+<meta property="og:image" content="https://www.lorraenmadre.com/brand-assets/hero-poster.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="Space for Story Time Club — a cinematic family movie calendar for 2027">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Space for Story Time Club — 365 Family Movie Nights for 2027">
+<meta name="twitter:description" content="One movie or series for every day of 2027 in your Google Calendar, each event linking to where it streams, rents, or sells. $13 once.">
+<meta name="twitter:image" content="https://www.lorraenmadre.com/brand-assets/hero-poster.jpg">
+<meta name="twitter:image:alt" content="Space for Story Time Club — a cinematic family movie calendar for 2027">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.lorraenmadre.com/#website",
+      "url": "https://www.lorraenmadre.com/",
+      "name": "Lorraen Madre",
+      "description": "Space for Story Time Club — 365 family movie nights for 2027, delivered as a Google Calendar."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.lorraenmadre.com/#org",
+      "name": "Lorraen Madre",
+      "url": "https://www.lorraenmadre.com/",
+      "logo": "https://www.lorraenmadre.com/brand-assets/wish-well-logo.svg"
+    },
+    {
+      "@type": "Product",
+      "name": "Space for Story Time Club",
+      "description": "A Google Calendar with one movie or series selected for every day of 2027. Each calendar event includes a link showing where that story is currently available to stream, rent, or buy, plus an optional story note to notice, discuss, or carry into the wider Story Time experience.",
+      "brand": { "@id": "https://www.lorraenmadre.com/#org" },
+      "url": "https://www.lorraenmadre.com/",
+      "image": "https://www.lorraenmadre.com/brand-assets/hero-poster.jpg",
+      "category": "Family entertainment",
+      "offers": {
+        "@type": "Offer",
+        "price": "13.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://wishwisely.gumroad.com/l/fzexhb"
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Belleza&family=Figtree:wght@400;500;600;700&family=Mulish:wght@400;500;600;700&family=Noto+Sans+Symbols+2&display=swap">
@@ -126,12 +190,16 @@ img{display:block;max-width:100%}
 .nav-links a{font-family:var(--sub);font-weight:600;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:#F7F3EA;opacity:.82;transition:opacity .18s,color .35s}
 .nav.stuck .nav-links a{color:var(--ink);opacity:.72}
 .nav-links a:hover{opacity:1;color:var(--spirit)}
-.nav .pill{font-size:.6rem;padding:.45rem .95rem;opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .3s,transform .3s,background .22s,color .22s}
+.nav .pill{font-size:.6rem;padding:.45rem .95rem;white-space:nowrap;opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .3s,transform .3s,background .22s,color .22s}
 .nav.stuck .pill{opacity:1;transform:none;pointer-events:auto}
 @media (max-width:860px){
   .nav-links{display:none}
   .nav .mark span{display:none}
   .nav .pill{opacity:1;transform:none;pointer-events:auto}
+}
+@media (max-width:400px){
+  .nav .pill .arw{display:none}
+  .nav .pill{padding:.42rem .8rem;font-size:.56rem}
 }
 
 /* ---------- hero (full-bleed background video) ---------- */
@@ -166,7 +234,7 @@ img{display:block;max-width:100%}
 .hero .offer .sep{width:4px;height:4px;border-radius:50%;background:var(--gold)}
 .hero .offer .price{color:var(--gold)}
 .hero .cta-row{display:flex;justify-content:center;flex-wrap:wrap;gap:.8rem}
-.hero .fine{margin-top:1.1rem;font-size:.85rem;color:rgba(247,243,234,.6)}
+.hero .fine{margin-top:1.1rem;font-size:.85rem;color:rgba(247,243,234,.78);max-width:36ch;margin-inline:auto}
 @media (prefers-reduced-motion:reduce){.hero-bg{display:none}}
 
 /* ---------- section shell ---------- */
@@ -204,9 +272,47 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
 .club-cta{margin-top:1.7rem}
 .club-cta .cta-note{margin-top:.7rem;font-family:var(--sub);font-weight:600;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .inventory{border-top:1px solid var(--line)}
-.inventory div{display:grid;grid-template-columns:auto 1fr;gap:1.3rem;align-items:baseline;padding:1.05rem 0;border-bottom:1px solid var(--line)}
-.inventory dt{font-family:var(--sub);font-weight:700;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap}
-.inventory dd{margin:0;color:var(--ink-2);font-size:.95rem}
+.inventory div{display:grid;grid-template-columns:1fr;gap:.5rem;padding:1.15rem 0;border-bottom:1px solid var(--line)}
+@media (min-width:560px){.inventory div{grid-template-columns:9.5rem 1fr;gap:1.3rem;align-items:baseline}}
+.inventory dt{font-family:var(--sub);font-weight:700;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase}
+.inventory dd{margin:0;color:var(--ink-2);font-size:.96rem;line-height:1.55}
+.inventory dd b{color:var(--ink);font-weight:600}
+
+/* ---------- 2½ · what a day looks like (calendar-event demo) ---------- */
+.demo{display:grid;gap:clamp(2rem,5vw,3.5rem);grid-template-columns:1fr;align-items:center}
+@media (min-width:900px){.demo{grid-template-columns:1fr 1fr}}
+.demo-copy .lead{margin-top:1rem}
+.evcard{
+  margin:0;background:var(--paper);border:1px solid var(--line);border-radius:14px;
+  padding:clamp(1.3rem,4vw,2rem);position:relative;overflow:hidden;
+  box-shadow:0 22px 48px -28px rgba(27,26,23,.45);
+}
+.evcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--gold)}
+.evcard-top{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.evcard-date{display:flex;align-items:baseline;gap:.55rem}
+.evcard-date .d{font-family:var(--display);font-size:clamp(2.1rem,6vw,2.9rem);line-height:1;color:var(--ink)}
+.evcard-date .m{font-family:var(--sub);font-weight:700;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep)}
+.evcard-day{font-family:var(--sub);font-weight:600;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.evcard-title{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,1.95rem);color:var(--ink);margin:1.05rem 0 .4rem;line-height:1.15}
+.evcard-title .clap{font-family:var(--glyph);margin-right:.4rem}
+.evcard-field{border-top:1px solid var(--line-2);padding-top:.9rem;margin-top:.95rem}
+.evcard-label{display:block;font-family:var(--sub);font-weight:700;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.4rem}
+.evcard-link{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--sub);font-weight:700;font-size:.84rem;
+  color:var(--spirit);border-bottom:1px solid color-mix(in srgb,var(--spirit) 40%,transparent);padding-bottom:2px}
+.evcard-link svg{flex:none}
+.evcard-link:hover{border-color:var(--spirit)}
+.evcard-note{font-family:var(--display);font-size:clamp(1.05rem,2vw,1.2rem);color:var(--ink);line-height:1.32}
+.evcard-cap{margin-top:1.35rem;font-family:var(--sub);font-weight:600;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+
+/* ---------- 3½ · where it leads (story → wish → dream → design → UFO) ---------- */
+.bridge-sec{max-width:44rem}
+.bridge-sec .lead{margin:1rem 0 .4rem}
+.path{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;gap:.2rem;justify-items:start}
+.path li{font-family:var(--display);font-size:clamp(1.2rem,2.7vw,1.7rem);color:var(--ink-3);line-height:1.45}
+.path li::after{content:"\2193";display:block;font-family:var(--glyph);font-size:.85rem;color:var(--line);margin:.2rem 0 .2rem .15rem}
+.path li:first-child{color:var(--ink)}
+.path li:last-child{color:var(--gold-deep)}
+.path li:last-child::after{display:none}
 
 /* ---------- 3 · who ---------- */
 .who p.stack{font-family:var(--display);font-size:clamp(1.35rem,2.8vw,2rem);line-height:1.34;max-width:24ch;color:var(--ink)}
@@ -372,6 +478,9 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
 .house.here::after{content:"you are here";position:absolute;right:1rem;top:1.15rem;
   font-family:var(--sub);font-weight:700;font-size:.5rem;letter-spacing:.11em;text-transform:uppercase;
   color:var(--gold-deep);background:var(--gold-soft);border-radius:999px;padding:.2rem .5rem}
+.house.soon{cursor:default}
+.house.soon:hover{border-color:var(--line);background:var(--panel)}
+.house.soon .go{color:var(--ink-3)}
 @media (max-width:620px){
   .houses{grid-template-columns:repeat(2,1fr);grid-template-rows:none;grid-template-areas:none;grid-auto-rows:minmax(10.5rem,auto)}
   .houses .house{grid-area:auto !important}
@@ -438,10 +547,13 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
 .tree a{display:flex;align-items:center;gap:.75rem;border:1px solid var(--night-line);border-radius:999px;
   padding:.45rem 1rem .45rem .55rem;color:var(--night-ink);transition:background .22s,transform .22s}
 .tree a:hover{background:rgba(245,241,232,.06);transform:translateY(-2px)}
-.tree a .mark{width:1.7rem;height:1.7rem;flex:none;color:var(--night-ink-2)}
-.tree a .mark svg{width:100%;height:100%}
-.tree a .t{font-family:var(--sub);font-weight:600;font-size:.76rem;flex:1}
+.tree a .mark,.tree span.dead .mark{width:1.7rem;height:1.7rem;flex:none;color:var(--night-ink-2)}
+.tree a .mark svg,.tree span.dead .mark svg{width:100%;height:100%}
+.tree a .t,.tree span.dead .t{font-family:var(--sub);font-weight:600;font-size:.76rem;flex:1}
 .tree a .arw{width:.85rem;opacity:.5;flex:none}
+.tree span.dead{display:flex;align-items:center;gap:.75rem;border:1px solid var(--night-line);border-radius:999px;
+  padding:.45rem 1rem .45rem .55rem;color:var(--night-ink-2);opacity:.62;cursor:default}
+.tree .soon-tag{font-family:var(--sub);font-weight:700;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:var(--night-ink-2);flex:none}
 .foot .social{display:flex;flex-wrap:wrap;gap:1.3rem;margin:2.2rem 0 1.9rem}
 .foot .social a{font-family:var(--sub);font-weight:700;font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:var(--night-ink-2);border-bottom:1px solid transparent;padding-bottom:2px}
 .foot .social a:hover{color:var(--night-ink);border-color:var(--gold)}
@@ -469,7 +581,7 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
     <a href="#houses">The Houses</a>
     <a href="#connect">Connect</a>
   </nav>
-  <a class="pill solid" data-link="joinClub" href="#"><svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg>Join the Challenge<svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <a class="pill solid nav-cta" data-link="joinClub" href="#"><svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg>Get the Calendar<svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </header>
 
 <main id="top">
@@ -486,9 +598,9 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
       <p class="tagline">Watch a movie together.<br>Wish for something better.</p>
       <p class="offer"><span>365 stories</span><span class="sep" aria-hidden="true"></span><span>one year</span><span class="sep" aria-hidden="true"></span><span class="price">$13</span></p>
       <div class="cta-row">
-        <a class="pill solid" data-link="joinClub" href="#"><svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg>Join the Challenge<svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="pill solid" data-link="joinClub" href="#"><svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg>Get the 2027 Calendar — $13<svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <p class="fine">Family movie night solved.</p>
+      <p class="fine">One story a day for all of 2027 — delivered in Google Calendar.</p>
     </div>
   </section>
 
@@ -499,25 +611,60 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
         <div class="kicker"><span class="eyebrow">Make space for a story</span></div>
         <h2 id="club-title">A movie playlist with a purpose.</h2>
         <p class="sub2">Space to make wishes come true.</p>
-        <p>It's a Google Calendar with one story on every day of the year.</p>
+        <p>It&rsquo;s a Google Calendar with one story on every day of 2027 &mdash; and every event tells you where to watch it.</p>
         <ol class="how">
           <li>Get it &mdash; one payment, <b>$13</b>.</li>
           <li>Add the calendar to your phone, once.</li>
           <li>Every day, today&rsquo;s movie is already there.</li>
         </ol>
         <div class="club-cta">
-          <a class="pill solid" data-link="joinClub" href="#"><svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg>Join the Challenge<svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="pill solid" data-link="joinClub" href="#"><svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg>Get the 2027 Calendar — $13<svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <p class="cta-note">$13 once &middot; yours for all of 2027</p>
         </div>
       </div>
       <div class="rv">
         <dl class="inventory">
-          <div><dt>365 stories</dt><dd>one for every day</dd></div>
-          <div><dt>The calendar</dt><dd>a daily event — know what's playing</dd></div>
-          <div><dt>Story notes</dt><dd>little things to notice, remember or talk about</dd></div>
-          <div><dt>The challenge</dt><dd>watch your way through the year, at your pace</dd></div>
+          <div>
+            <dt>365 stories</dt>
+            <dd>One movie or series chosen for every single day of 2027. Family movie night is decided before you sit down.</dd>
+          </div>
+          <div>
+            <dt>Where to watch</dt>
+            <dd>Open the day&rsquo;s event and tap one link to see exactly where that story is streaming, to rent, or to buy right now. <b>No hunting across Netflix, Disney+, Prime Video, Max or Hulu.</b></dd>
+          </div>
+          <div>
+            <dt>Story notes</dt>
+            <dd>Many days include a small something to notice, talk about, or carry into the wider Story Time experience.</dd>
+          </div>
         </dl>
       </div>
+    </div>
+  </section>
+
+  <!-- 2½ · WHAT A DAY LOOKS LIKE -->
+  <section class="sec panel" id="demo" aria-labelledby="demo-title">
+    <div class="wrap demo rv">
+      <div class="demo-copy">
+        <div class="kicker"><span class="eyebrow" id="demo-title">What a day looks like</span></div>
+        <h2 class="big">Open the calendar. The night is already planned.</h2>
+        <p class="lead">Every date in 2027 holds an event like this one &mdash; the film, where to find it, and a small something to talk about.</p>
+      </div>
+      <figure class="evcard">
+        <div class="evcard-top">
+          <span class="evcard-date"><span class="d">1</span><span class="m">Jan 2027</span></span>
+          <span class="evcard-day">Friday &middot; all day</span>
+        </div>
+        <p class="evcard-title"><span class="clap" aria-hidden="true">&#127909;</span>The Wizard of Oz</p>
+        <div class="evcard-field">
+          <span class="evcard-label">Where to watch</span>
+          <a class="evcard-link" href="https://www.justwatch.com/us/search?q=The%20Wizard%20of%20Oz" target="_blank" rel="noreferrer">See where it&rsquo;s streaming, to rent or buy<svg viewBox="0 0 24 24" width="13" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="evcard-field">
+          <span class="evcard-label">Story note</span>
+          <p class="evcard-note">What would you ask the Wizard for?</p>
+        </div>
+        <figcaption class="evcard-cap">An example event &mdash; every day of 2027 has one</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -531,6 +678,22 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
       <div class="kicker"><span class="eyebrow" id="who-title">Who this is for</span></div>
       <p class="stack">For families that can't decide what to watch. And for people who need a reason to watch — or rewatch — the stories that make us believe in happily ever after.</p>
       <p class="wry">And for anyone who has spent twenty-seven minutes scrolling a streaming app while family movie night slowly dies.</p>
+    </div>
+  </section>
+
+  <!-- 3½ · WHERE IT LEADS -->
+  <section class="sec" id="path" aria-labelledby="path-title">
+    <div class="wrap bridge-sec rv">
+      <div class="kicker"><span class="eyebrow" id="path-title">Where it leads</span></div>
+      <h2 class="big">The movie calendar is where it starts.</h2>
+      <p class="lead">Stories are how we notice what we want, what we miss, what we&rsquo;d change, what we&rsquo;d build. Follow one far enough and it becomes something you can actually work on.</p>
+      <ol class="path" aria-label="Story becomes a wish, a dream, a design, and a whole family office">
+        <li>Story</li>
+        <li>Wish</li>
+        <li>Dream</li>
+        <li>Design &amp; system</li>
+        <li>Universal Family Office</li>
+      </ol>
     </div>
   </section>
 
@@ -690,7 +853,8 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
       <p class="final">Make the best of what you have. Then make a wish for what comes next.</p>
       <p class="wishwell">Wish well.</p>
       <p class="lockup">Lorraen&nbsp;Madre <span>Time . space + Story</span></p>
-      <a class="pill solid" data-link="joinClub" href="#"><svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg>Join the Challenge<svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="pill solid" data-link="joinClub" href="#"><svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg>Join the Challenge — $13<svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <p class="cta-note" style="margin-top:.9rem">One story a day, all year. Delivered in Google Calendar.</p>
     </div>
   </section>
 
@@ -770,39 +934,51 @@ function houseIcon(num){
 }
 const arw = `<svg viewBox="0 0 24 24" width="12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
 
+function houseState(num){
+  const url = LINKS.houses[num];
+  return { url, live: !!url && url !== "#" && url !== "#top" };
+}
+
 const grid = document.getElementById("houses-grid");
 HOUSES.forEach(([num,name,desc,category],i)=>{
   const here = num === "12";
+  const { url, live } = houseState(num);
   const media = HOUSE_BG[num];
   const isVideo = media && (media.indexOf("data:video") === 0 || /\.mp4($|\?)/.test(media));
   const noLabel = !!HOUSE_NOLABEL[num];
   const mediaMode = HOUSE_MEDIA[num] || "";
-  const a = document.createElement("a");
-  a.className = "house" + (here ? " here" : "") + (media ? " has-media " + mediaMode : "") + (noLabel ? " no-label" : "");
-  a.href = LINKS.houses[num] || "#";
-  if(!here){ a.target = "_blank"; a.rel = "noreferrer"; }
+  const soon = !here && !live;
+  const el = document.createElement(here || live ? "a" : "div");
+  el.className = "house" + (here ? " here" : "") + (soon ? " soon" : "") + (media ? " has-media " + mediaMode : "") + (noLabel ? " no-label" : "");
+  if(here){ el.href = "#club"; }
+  else if(live){ el.href = url; el.target = "_blank"; el.rel = "noreferrer"; }
   let bg = "";
   if(isVideo) bg = `<video class="house-bg" autoplay muted loop playsinline preload="metadata" poster="${HOUSE_POSTER[num]||""}"><source src="${media}" type="video/mp4"></video>`;
   else if(media) bg = `<img class="house-bg" src="${media}" alt="" aria-hidden="true">`;
-  a.innerHTML = `
+  const goText = here ? "You are here" : (soon ? category + " &middot; soon" : category);
+  el.innerHTML = `
     ${bg}
     <span class="mark">${houseIcon(num)}</span>
     <span class="bot">
       ${noLabel ? "" : `<span class="name">${name}</span><span class="desc">${desc}</span>`}
-      <span class="go">${here ? "You are here" : category} ${arw}</span>
+      <span class="go">${goText} ${soon ? "" : arw}</span>
     </span>`;
-  a.setAttribute("aria-label", `House ${num}: ${name}. ${desc}`);
-  grid.appendChild(a);
+  el.setAttribute("aria-label", `House ${num}: ${name}. ${desc}` + (soon ? " — coming soon" : ""));
+  grid.appendChild(el);
 });
 
 
 const tree = document.getElementById("tree");
 HOUSES.forEach(([num,name])=>{
-  const a = document.createElement("a");
-  a.href = LINKS.houses[num] || "#";
-  if(num !== "12"){ a.target = "_blank"; a.rel = "noreferrer"; }
-  a.innerHTML = `<span class="mark">${houseIcon(num)}</span><span class="t">${name}</span><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
-  tree.appendChild(a);
+  const { url, live } = houseState(num);
+  const el = document.createElement(live ? "a" : "span");
+  if(live){ el.href = url; el.target = "_blank"; el.rel = "noreferrer"; }
+  else el.className = "dead";
+  const tail = live
+    ? `<svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`
+    : `<span class="soon-tag">Soon</span>`;
+  el.innerHTML = `<span class="mark">${houseIcon(num)}</span><span class="t">${name}</span>${tail}`;
+  tree.appendChild(el);
 });
 
 /* §7 — twelve celestial bodies revolving around the Wish Well
