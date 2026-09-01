@@ -396,6 +396,37 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
 .hea .lockup{display:flex;align-items:center;gap:.6rem;margin-bottom:2rem;font-family:var(--display);color:var(--ink-2);text-transform:uppercase;letter-spacing:.05em;font-size:.95rem}
 .hea .lockup span{font-family:var(--sub);font-weight:600;font-size:.55rem;letter-spacing:.2em;opacity:.7}
 
+/* ---------- 8½ · connect (wish network intake) ---------- */
+.connect-grid{display:grid;gap:clamp(2rem,5vw,3.5rem);grid-template-columns:1fr}
+@media (min-width:920px){.connect-grid{grid-template-columns:.8fr 1.2fr;align-items:start}}
+.connect-copy h2{color:var(--night-ink)}
+.connect-copy .lead{color:var(--night-ink-2);margin-bottom:1.5rem}
+.connect-copy .litany{display:grid;gap:.5rem;max-width:30ch}
+.connect-copy .litany span{font-family:var(--display);font-size:clamp(1.05rem,1.9vw,1.3rem);color:var(--night-ink);line-height:1.3}
+.connect-copy .litany span:first-child{color:var(--gold)}
+.connect-panel{min-width:0}
+.cform{display:grid;gap:1.05rem}
+.cform .row{display:grid;gap:1.05rem}
+@media (min-width:560px){.cform .row.two{grid-template-columns:1fr 1fr}}
+.cform .f{display:grid;gap:.4rem;min-width:0}
+.cform label{font-family:var(--sub);font-weight:700;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--night-ink-2)}
+.cform label .opt{font-weight:600;opacity:.6;letter-spacing:.04em}
+.cform input,.cform textarea{
+  font-family:var(--sans);font-size:.95rem;color:var(--night-ink);
+  background:rgba(245,241,232,.045);border:1px solid var(--night-line);border-radius:10px;
+  padding:.68rem .85rem;width:100%;transition:border-color .18s ease,background .18s ease}
+.cform input:focus,.cform textarea:focus{outline:none;border-color:var(--spirit);background:rgba(245,241,232,.08)}
+.cform textarea{min-height:4.4rem;resize:vertical;line-height:1.5}
+.cform input::placeholder,.cform textarea::placeholder{color:var(--night-ink-2);opacity:.5}
+.cform input[type=date],.cform input[type=time]{color-scheme:dark}
+.cform .consent{display:flex;gap:.6rem;align-items:flex-start;font-family:var(--sans);font-size:.82rem;color:var(--night-ink-2);line-height:1.45}
+.cform .consent input{width:auto;margin-top:.15rem;accent-color:var(--spirit)}
+.cform .submit{justify-self:start;margin-top:.3rem;border:0;font:inherit}
+.cform .note{font-family:var(--sub);font-weight:600;font-size:.74rem;letter-spacing:.02em;color:var(--night-ink-2);min-height:1.1em;margin:0}
+.cform .note.ok{color:var(--spirit)}
+.cform .note.err{color:var(--red)}
+.connect-done{display:none;font-family:var(--display);font-size:clamp(1.2rem,2.4vw,1.7rem);color:var(--night-ink);line-height:1.4;max-width:30ch}
+
 /* ---------- footer ---------- */
 .foot{background:var(--night);color:var(--night-ink);padding:clamp(3.5rem,8vw,5.5rem) 0 3rem}
 .foot .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.5rem;
@@ -436,6 +467,7 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
     <a href="#about">About</a>
     <a href="#wish">Make a Wish</a>
     <a href="#houses">The Houses</a>
+    <a href="#connect">Connect</a>
   </nav>
   <a class="pill solid" data-link="joinClub" href="#"><svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg>Join the Challenge<svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </header>
@@ -514,7 +546,7 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
       <div class="fgi-cta">
         <a class="pill design" data-link="design" href="#">Design</a>
         <a class="pill wish" data-link="wish" href="#wish">Wish</a>
-        <a class="pill watch" data-link="watch" href="#club">Watch</a>
+        <a class="pill watch" data-link="connect" href="#connect">Connect</a>
       </div>
     </div>
   </section>
@@ -592,6 +624,49 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
     </div>
   </section>
 
+  <!-- 8½ · CONNECT — wish network intake -->
+  <section class="sec night" id="connect" aria-labelledby="connect-title">
+    <div class="wrap rv connect-grid">
+      <div class="connect-copy">
+        <div class="kicker"><span class="eyebrow" id="connect-title">Connect with me</span></div>
+        <h2 class="big">For the people who make wishes come true.</h2>
+        <p class="lead">I&rsquo;m building a network of professionals &mdash; healers, builders, lawyers, designers, money people, fixers &mdash; who want their work pointed at someone&rsquo;s actual wish. If that&rsquo;s you, introduce yourself.</p>
+        <div class="litany">
+          <span>Tell me who you are.</span>
+          <span>Tell me what you do.</span>
+          <span>Tell me what you&rsquo;d ask for.</span>
+          <span>Tell me what you can offer.</span>
+        </div>
+      </div>
+
+      <div class="connect-panel">
+        <form class="cform" id="connect-form" novalidate>
+          <div class="row two">
+            <div class="f"><label for="cf-name">Full name</label><input id="cf-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="f"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="row two">
+            <div class="f"><label for="cf-phone">Phone</label><input id="cf-phone" name="phone" type="tel" autocomplete="tel" required></div>
+            <div class="f"><label for="cf-heard">How you heard about Making a Wish</label><input id="cf-heard" name="heard" type="text" required></div>
+          </div>
+          <div class="row two">
+            <div class="f"><label for="cf-birthday">Birthday</label><input id="cf-birthday" name="birthday" type="date" required></div>
+            <div class="f"><label for="cf-birthplace">Place of birth</label><input id="cf-birthplace" name="birthplace" type="text" placeholder="City, country" required></div>
+          </div>
+          <div class="f"><label for="cf-birthtime">Time of birth <span class="opt">&mdash; if you know it</span></label><input id="cf-birthtime" name="birthtime" type="time"></div>
+          <div class="f"><label for="cf-do">What do you do?</label><textarea id="cf-do" name="what_you_do" required></textarea></div>
+          <div class="f"><label for="cf-want">What do you want to do?</label><textarea id="cf-want" name="what_you_want" required></textarea></div>
+          <div class="f"><label for="cf-ask">What&rsquo;s your ask?</label><textarea id="cf-ask" name="your_ask" required></textarea></div>
+          <div class="f"><label for="cf-offer">What&rsquo;s your offer?</label><textarea id="cf-offer" name="your_offer" required></textarea></div>
+          <label class="consent"><input type="checkbox" name="consent" value="yes" required> It&rsquo;s OK for Lorraen Madre to contact me about the wish network.</label>
+          <button type="submit" class="pill solid submit">Send introduction<svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <p class="note" id="cf-note" role="status" aria-live="polite"></p>
+        </form>
+        <div class="connect-done" id="connect-done">Thank you &mdash; this is exactly how it starts. I read every one of these myself. Expect to hear from me.</div>
+      </div>
+    </div>
+  </section>
+
   <!-- 9 · HAPPILY EVER AFTER -->
   <section class="sec media hea" aria-labelledby="hea-title">
     <video class="sec-bg" autoplay muted loop playsinline preload="metadata" aria-hidden="true" poster="brand-assets/hea-poster.jpg">
@@ -654,7 +729,7 @@ const LINKS = {
   joinClub:  "https://wishwisely.gumroad.com/l/fzexhb",   // Gumroad checkout — $13 one-time
   design:    "https://lorraenmadre.app/",             // the Lorraen Madre app
   wish:      "https://wishwisely.gumroad.com/l/5thhouse",   // Gumroad — 5th House
-  watch:     "#club",
+  connect:   "#connect",                             // scrolls to the wish-network intake form
   calendar:  "https://calendar.google.com/calendar/u/0?cid=OTZkNDAwN2Q0NzNmMjFhNmNkMGFlYTFmMjkxZDhiMzY5Mjk0ODI2OGQxOTJkMWFmZDE0Zjg4OWIwYzZhMTgxMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t",   // "Space for Story Time" calendar — delivered after purchase, not a public CTA
   substack:  "https://wishwisely.substack.com",
   instagram: "https://instagram.com/",
@@ -771,6 +846,52 @@ document.querySelectorAll("[data-link]").forEach(el=>{
 });
 
 document.getElementById("yr").textContent = new Date().getFullYear();
+
+/* ============================================================
+   CONNECT FORM → Google Sheet (Apps Script web app).
+   Paste the deployed /exec URL below to switch the form live.
+   Later: point this at a GoHighLevel inbound webhook instead —
+   the field names already match GHL contact + custom fields.
+   ============================================================ */
+const CONNECT_ENDPOINT = "";
+
+(function(){
+  const form = document.getElementById("connect-form");
+  if(!form) return;
+  const note = document.getElementById("cf-note");
+  const done = document.getElementById("connect-done");
+  form.addEventListener("submit", async (e)=>{
+    e.preventDefault();
+    note.className = "note";
+    if(!form.checkValidity()){
+      note.textContent = "Please fill in every required field.";
+      note.classList.add("err");
+      form.reportValidity();
+      return;
+    }
+    const btn = form.querySelector(".submit");
+    const body = new URLSearchParams(new FormData(form));
+    body.append("source_page", location.href);
+    body.append("submitted_at", new Date().toISOString());
+    if(!CONNECT_ENDPOINT){
+      note.textContent = "The introduction form goes live shortly — please check back soon.";
+      note.classList.add("err");
+      return;
+    }
+    btn.disabled = true;
+    note.textContent = "Sending…";
+    try{
+      await fetch(CONNECT_ENDPOINT, { method:"POST", mode:"no-cors", body });
+      form.style.display = "none";
+      done.style.display = "block";
+      done.scrollIntoView({ behavior:"smooth", block:"center" });
+    }catch(err){
+      btn.disabled = false;
+      note.textContent = "Something went wrong sending that. Please try again in a moment.";
+      note.classList.add("err");
+    }
+  });
+})();
 
 const nav = document.getElementById("nav");
 const onScroll = ()=> nav.classList.toggle("stuck", window.scrollY > window.innerHeight - 90);
