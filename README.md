@@ -62,7 +62,7 @@ Two accents: **gold** (`--gold`, every Join button + `$13` + "you are here") and
 | Canonical categories + destinations for houses 5–12 | `HOUSES`, `LINKS.houses` |
 | Social handles | `LINKS.instagram` / `tiktok` / `youtube` / `substack` |
 
-**Live links:** `joinClub` → `/library/#space-for-story-time-club` ($13, Stripe) · `design` →
+**Live links:** `joinClub` → Stripe Payment Link `buy.stripe.com/dRmdR94rv6Di3Y51jA4sE00` ($13) · `design` →
 `lorraenmadre.app` · house `01` → `omw.life` · house `04` → the Amazon listing ·
 `calendar` → the "Space for Story Time" Google Calendar (internal — delivered after purchase).
 
