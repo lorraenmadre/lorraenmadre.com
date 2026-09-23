@@ -23,7 +23,7 @@ folder. For GitHub Pages you'd add a `CNAME` file and point DNS at GitHub's IPs.
 |---|---|
 | Hero | background video `brand-assets/hero.mp4` (see *To do* — compress before launch) |
 | §3 "Who is this for" | `brand-assets/who-bg.mp4` |
-| §5 fairy-godmother box | three pills: **Design** → `LINKS.design` (currently `https://lorraenmadre.app/`), **Wish** → `#wish`, **Watch** → `#club` |
+| §5 fairy-godmother box | three primary CTAs: **Design** → `LINKS.design` (`https://lorraenmadre.app/`), **Work** → `#connect` intake form, **Play** → `/library/` |
 | §7 "Wishes like order" | `brand-assets/order-bg.mp4` + WISH WELL logo |
 | §8 The Houses | 12-tile mosaic. Houses 1–4 have media backgrounds; the rest are text tiles. |
 | §9 Happily ever after | `brand-assets/hea-bg.mp4` |
@@ -59,10 +59,26 @@ Two accents: **gold** (`--gold`, every Join button + `$13` + "you are here") and
 | Canonical categories + destinations for houses 5–12 | `HOUSES`, `LINKS.houses` |
 | Social handles | `LINKS.instagram` / `tiktok` / `youtube` / `substack` |
 
-**Live links:** `joinClub` → `wishwisely.gumroad.com/l/fzexhb` ($13) · `design` →
+**Live links:** `joinClub` → `/library/#space-for-story-time-club` ($13, Stripe) · `design` →
 `lorraenmadre.app` · house `01` → `omw.life` · house `04` → the Amazon listing ·
 `calendar` → the "Space for Story Time" Google Calendar (internal — delivered after purchase).
 
 ## Repo
 
 <https://github.com/lorraenmadre/lorraenmadre.com>
+
+## Library (Play)
+
+- `library/index.html` — mobile-first store page, rendered from `library/products.json`.
+- `library/products.json` — the **only** place to edit products: title, description, house, `display_order`,
+  `availability` (`available` / `explore` / `coming_soon` / `unpublished`), destination, fulfillment, and
+  `prices[]` (label, amount in cents, `interval`, `stripe_price_id`, `checkout_url`). House, price and order are separate fields.
+- A price shows a buy button only when it has `stripe_price_id` (goes in the multi-item cart) or `checkout_url`
+  (a Stripe Payment Link). Otherwise the card shows Explore / Coming soon.
+- `api/checkout.js` — creates one Stripe Checkout Session for all selected items. Needs `STRIPE_SECRET_KEY` in Vercel env.
+
+## Work form
+
+The `#connect` form is shared: `lorraenmadre.com` and `junglebook.lorraenmadre.com` are the **same Vercel project and
+the same `index.html`**, so there is one form and one endpoint (`CONNECT_ENDPOINT`). Each submission carries
+`source_site` (hostname) and `source_page`. Client blocks double-submits + repeat emails; the endpoint should upsert on email.

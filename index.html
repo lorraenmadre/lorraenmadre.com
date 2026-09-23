@@ -59,7 +59,7 @@
         "price": "13.00",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "url": "https://wishwisely.gumroad.com/l/fzexhb"
+        "url": "https://www.lorraenmadre.com/library/#space-for-story-time-club"
       }
     }
   ]
@@ -714,8 +714,8 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
       <p class="body">Some of it is story. Some of it is systems. Some of it is understanding people, patterns and timing. And every once in a while <b>something works that I still can't completely explain.</b> We can call that part magic.</p>
       <div class="fgi-cta">
         <a class="pill design" data-link="design" href="#">Design</a>
-        <a class="pill wish" data-link="wish" href="#wish">Wish</a>
-        <a class="pill watch" data-link="connect" href="#connect">Connect</a>
+        <a class="pill wish" data-link="work" href="#connect">Work</a>
+        <a class="pill watch" data-link="play" href="/library/">Play</a>
       </div>
     </div>
   </section>
@@ -810,6 +810,8 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
 
       <div class="connect-panel">
         <form class="cform" id="connect-form" novalidate>
+          <input type="hidden" name="source_site" id="cf-source" value="">
+          <div class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label for="cf-website">Leave this empty</label><input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
           <div class="row two">
             <div class="f"><label for="cf-name">Full name</label><input id="cf-name" name="name" type="text" autocomplete="name" required></div>
             <div class="f"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
@@ -896,10 +898,11 @@ if (!location.hash) window.scrollTo(0, 0);
    open in a new tab.
    ============================================================ */
 const LINKS = {
-  joinClub:  "https://wishwisely.gumroad.com/l/fzexhb",   // Gumroad checkout — $13 one-time
-  design:    "https://lorraenmadre.app/",             // the Lorraen Madre app
-  wish:      "https://wishwisely.gumroad.com/l/5thhouse",   // Gumroad — 5th House
-  connect:   "#connect",                             // scrolls to the wish-network intake form
+  joinClub:  "/library/#space-for-story-time-club",   // Library card — $13 (Stripe checkout lives in library/products.js)
+  design:    "https://lorraenmadre.app/",             // Design CTA → Lorraen Madre app sign-in (TODO: confirm post-login return param)
+  work:      "#connect",                             // Work CTA → shared intake form (same page serves junglebook.lorraenmadre.com)
+  play:      "/library/",                            // Play CTA → Lorraen Madre Library
+  connect:   "#connect",
   calendar:  "https://calendar.google.com/calendar/u/0?cid=OTZkNDAwN2Q0NzNmMjFhNmNkMGFlYTFmMjkxZDhiMzY5Mjk0ODI2OGQxOTJkMWFmZDE0Zjg4OWIwYzZhMTgxMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t",   // "Space for Story Time" calendar — delivered after purchase, not a public CTA
   substack:  "https://wishwisely.substack.com",
   instagram: "https://instagram.com/",
@@ -908,7 +911,7 @@ const LINKS = {
   houses: {
     "01":"https://omw.life/","02":"#","03":"#",
     "04":"https://www.amazon.com/dp/B0H2NSWDYV","05":"#","06":"#",
-    "07":"#","08":"#","09":"#","10":"https://wishwisely.gumroad.com/l/10thhouse","11":"#","12":"#top"
+    "07":"#","08":"#","09":"#","10":"#","11":"#","12":"#top"
   }
 };
 
@@ -1024,7 +1027,7 @@ document.querySelectorAll("[data-link]").forEach(el=>{
   const v = LINKS[k];
   if(!v) return;
   el.setAttribute("href", v);
-  if(v.charAt(0) !== "#"){ el.target = "_blank"; el.rel = "noreferrer"; }
+  if(v.charAt(0) !== "#" && v.charAt(0) !== "/"){ el.target = "_blank"; el.rel = "noreferrer"; }
 });
 
 document.getElementById("yr").textContent = new Date().getFullYear();
@@ -1052,9 +1055,23 @@ const CONNECT_ENDPOINT = "";
       return;
     }
     const btn = form.querySelector(".submit");
+    if(btn.disabled) return;                               // block double-clicks
+    if(form.website && form.website.value) return;         // honeypot: bots only
+    const src = document.getElementById("cf-source");
+    if(src) src.value = location.hostname;                 // lorraenmadre.com vs junglebook.lorraenmadre.com
+    const email = (form.email.value||"").trim().toLowerCase();
+    const dedupeKey = "lm-connect-sent:" + email;
+    let already = false;
+    try{ already = !!localStorage.getItem(dedupeKey); }catch(_){}
+    if(already){
+      note.textContent = "We already have your introduction from this email — thank you. Expect to hear from me.";
+      return;
+    }
     const body = new URLSearchParams(new FormData(form));
+    body.delete("website");
     body.append("source_page", location.href);
     body.append("submitted_at", new Date().toISOString());
+    // Server side should also upsert on email so duplicates never create a second record.
     if(!CONNECT_ENDPOINT){
       note.textContent = "The introduction form goes live shortly — please check back soon.";
       note.classList.add("err");
@@ -1064,6 +1081,7 @@ const CONNECT_ENDPOINT = "";
     note.textContent = "Sending…";
     try{
       await fetch(CONNECT_ENDPOINT, { method:"POST", mode:"no-cors", body });
+      try{ localStorage.setItem(dedupeKey, new Date().toISOString()); }catch(_){}
       form.style.display = "none";
       done.style.display = "block";
       done.scrollIntoView({ behavior:"smooth", block:"center" });
