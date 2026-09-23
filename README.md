@@ -42,6 +42,9 @@ Categories for houses **5–12 are placeholders** pending the canonical list.
 
 ## Type
 
+Brand tokens (colors, fonts, base styles, `.pill` buttons) live in **`/brand.css`**, loaded by both `/` and `/library/`. Change the brand there once and both pages follow.
+
+
 | Role | Font |
 |---|---|
 | Headings | Belleza |

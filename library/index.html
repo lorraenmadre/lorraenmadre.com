@@ -9,71 +9,54 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Belleza&family=Figtree:wght@400;500;600;700&family=Mulish:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Belleza&family=Figtree:wght@400;500;600;700&family=Mulish:wght@400;500;600;700&family=Noto+Sans+Symbols+2&display=swap">
+<link rel="stylesheet" href="/brand.css">
 <style>
-:root{
-  --paper:#FCFBF8;--panel:#F4F1EA;--ink:#1B1A17;--ink-2:#5C584E;--ink-3:#8A8478;
-  --line:rgba(27,26,23,.14);--gold:#D6A441;--gold-deep:#6E4E15;--gold-soft:#F0E2C4;--spirit:#0C7A46;
-  --display:"Belleza","Optima","Gill Sans",sans-serif;
-  --sub:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --sans:"Mulish",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --paper:#151410;--panel:#1D1B16;--ink:#F1EDE3;--ink-2:#ABA491;--ink-3:#847D6C;
-    --line:rgba(241,237,227,.16);--gold:#E1B45C;--gold-deep:#F0DBA9;--gold-soft:#3A2E14;--spirit:#43C98A;
-  }
-}
-:root[data-theme="dark"]{
-  --paper:#151410;--panel:#1D1B16;--ink:#F1EDE3;--ink-2:#ABA491;--ink-3:#847D6C;
-  --line:rgba(241,237,227,.16);--gold:#E1B45C;--gold-deep:#F0DBA9;--gold-soft:#3A2E14;--spirit:#43C98A;
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-:focus-visible{outline:2.5px solid var(--gold);outline-offset:3px;border-radius:4px}
-.wrap{width:min(560px,100% - 32px);margin:0 auto;padding:40px 0 120px}
-.top{text-align:center;margin-bottom:28px}
-.top a.home{font-family:var(--sub);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);text-decoration:none}
-h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,8vw,2.8rem);margin:.4rem 0 .2rem}
-.top p{color:var(--ink-2);margin:0}
+/* Library-only layout. Colors, fonts and .pill come from /brand.css (same as homepage). */
+.lib-head{background:var(--night);color:var(--night-ink);padding:22px 16px 44px;text-align:center}
+.lib-head .mark{display:inline-block;font-family:var(--display);font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;color:var(--night-ink)}
+.lib-head .mark span{display:block;font-family:var(--sub);font-weight:600;font-size:.5rem;letter-spacing:.24em;opacity:.62;margin-top:3px}
+.lib-head .eyebrow{display:block;margin-top:34px;color:#43C98A}
+.lib-head h1{font-size:clamp(2.2rem,9vw,3.2rem);margin:.35rem 0 .4rem}
+.lib-head p{color:var(--night-ink-2);max-width:32ch;margin:0 auto}
+.wrap.lib{width:min(560px,100% - 32px);padding:28px 0 120px}
 .list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px 18px;scroll-margin-top:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px 18px 16px;scroll-margin-top:16px}
 .card:target{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold-soft)}
 .row{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
-.card h2{font-family:var(--display);font-weight:400;font-size:1.3rem;margin:0}
-.house{font-family:var(--sub);font-weight:700;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--spirit)}
-.num{font-family:var(--sub);font-size:.7rem;color:var(--ink-3)}
-.desc{color:var(--ink-2);margin:.35rem 0 .8rem;font-size:.95rem}
+.card h2{font-size:1.35rem}
+.num{font-family:var(--sub);font-size:.66rem;letter-spacing:.14em;color:var(--ink-3)}
+.card .eyebrow{display:block;margin-top:4px}
+.desc{color:var(--ink-2);margin:.4rem 0 .9rem;font-size:.95rem}
 .actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.btn{display:inline-flex;align-items:center;gap:.4rem;min-height:40px;padding:.5rem 1rem;border-radius:999px;border:1.5px solid var(--ink);
-  background:transparent;color:var(--ink);font-family:var(--sub);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer}
-.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--gold-deep)}
-.btn[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-.tag{font-family:var(--sub);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);border:1px dashed var(--line);border-radius:999px;padding:.35rem .8rem}
-.price{font-family:var(--sub);font-weight:600;font-size:.85rem}
-.links{margin-top:28px}
-.links h3{font-family:var(--sub);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);text-align:center;margin:0 0 10px;font-weight:700}
-.link{display:block;text-align:center;padding:14px;border-radius:999px;border:1.5px solid var(--ink);text-decoration:none;font-family:var(--sub);font-weight:700}
-.cart{position:fixed;left:0;right:0;bottom:0;background:var(--ink);color:var(--paper);padding:12px 16px;display:none}
+.actions .pill{min-height:40px}
+.pill[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.price{font-family:var(--sub);font-weight:700;font-size:.8rem;letter-spacing:.04em}
+.price.gold{color:var(--gold-deep);background:var(--gold-soft);border-radius:999px;padding:.3rem .7rem}
+.tag{font-family:var(--sub);font-weight:700;font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);border:1.5px dashed var(--line);border-radius:999px;padding:.4rem .9rem}
+.links{margin-top:32px;text-align:center}
+.links .eyebrow{display:block;margin-bottom:12px}
+.links .pill{width:100%;justify-content:center}
+.cart{position:fixed;left:0;right:0;bottom:0;background:var(--night);color:var(--night-ink);padding:12px 16px;display:none}
 .cart.on{display:block}
-.cart .inner{width:min(560px,100%);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.cart .btn{border-color:var(--gold);background:var(--gold);color:var(--gold-deep)}
+.cart .inner{width:min(560px,100%);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--sub);font-weight:600}
 .msg{text-align:center;color:var(--ink-2);margin-top:16px;min-height:1.5em}
 </style>
 
-<div class="wrap">
-  <header class="top">
-    <a class="home" href="/">&larr; Lorraen Madre</a>
-    <h1>The Library</h1>
-    <p>Tools for time, space + story.</p>
-  </header>
+<header class="lib-head">
+  <a href="/" class="mark" aria-label="Lorraen Madre home">Lorraen&nbsp;Madre<span>Time . space + Story</span></a>
+  <span class="eyebrow">Play</span>
+  <h1>The Library</h1>
+  <p>Tools, calendars and frameworks for making wishes real.</p>
+</header>
+
+<div class="wrap lib">
 
   <ol class="list" id="list" aria-label="Library products"></ol>
   <noscript><p class="msg">Turn on JavaScript to browse the Library.</p></noscript>
 
   <section class="links" id="links" aria-label="More destinations" hidden>
-    <h3>Also from Lorraen Madre</h3>
+    <span class="eyebrow">Also from Lorraen Madre</span>
     <div id="links-list"></div>
   </section>
   <p class="msg" id="msg" role="status" aria-live="polite"></p>
@@ -82,7 +65,7 @@ h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,8vw,2.8rem);m
 <div class="cart" id="cart" role="region" aria-label="Your selection">
   <div class="inner">
     <span id="cart-text">0 items</span>
-    <button class="btn" id="checkout" type="button">Checkout</button>
+    <button class="pill solid" id="checkout" type="button">Checkout</button>
   </div>
 </div>
 
@@ -109,25 +92,25 @@ h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,8vw,2.8rem);m
     if (buyable.length){
       (p.prices||[]).forEach((pr,idx) => {
         if (pr.stripe_price_id){
-          actions += `<button class="btn gold" type="button" aria-pressed="false" data-key="${esc(p.id)}|${idx}">Add ${esc(pr.label)}</button>`;
+          actions += `<button class="pill solid" type="button" aria-pressed="false" data-key="${esc(p.id)}|${idx}">Add ${esc(pr.label)}</button>`;
         } else if (pr.checkout_url){
-          actions += `<a class="btn gold" href="${esc(pr.checkout_url)}">Buy ${esc(pr.label)}</a>`;
+          actions += `<a class="pill solid" href="${esc(pr.checkout_url)}">Buy ${esc(pr.label)}</a>`;
         }
       });
     } else {
       const priceText = (p.prices||[]).map(pr => pr.label).join(" · ");
-      if (priceText) actions += `<span class="price">${esc(priceText)}</span>`;
+      if (priceText) actions += `<span class="price gold">${esc(priceText)}</span>`;
     }
     if (p.destination){
       const ext = /^https?:/.test(p.destination);
-      actions += `<a class="btn" href="${esc(p.destination)}"${ext?' target="_blank" rel="noreferrer"':''}>Explore</a>`;
+      actions += `<a class="pill design" href="${esc(p.destination)}"${ext?' target="_blank" rel="noreferrer"':''}>Explore</a>`;
     }
     if (!buyable.length && !p.destination) actions += `<span class="tag">Coming soon</span>`;
     else if (!buyable.length && p.availability === "coming_soon") actions += `<span class="tag">Coming soon</span>`;
 
     li.innerHTML = `
       <div class="row"><h2>${esc(p.title)}</h2><span class="num">${String(i+1).padStart(2,"0")}</span></div>
-      ${p.house ? `<div class="house">${esc(p.house)}</div>` : ""}
+      ${p.house ? `<span class="eyebrow">${esc(p.house)}</span>` : ""}
       <p class="desc">${esc(p.short_description)}</p>
       <div class="actions">${actions}</div>`;
     list.appendChild(li);
@@ -138,7 +121,7 @@ h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,8vw,2.8rem);m
   if (links.length){
     document.getElementById("links").hidden = false;
     document.getElementById("links-list").innerHTML = links.map(l =>
-      `<a class="link" href="${esc(l.url)}" target="_blank" rel="noreferrer">${esc(l.title)}</a>`).join("");
+      `<a class="pill watch" href="${esc(l.url)}" target="_blank" rel="noreferrer">${esc(l.title)}</a>`).join("");
   }
 
   // honor #anchor after async render
