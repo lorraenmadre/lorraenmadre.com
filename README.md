@@ -1,3 +1,7 @@
+> Current planning rules: [WISH WELL 2026-09-24.1](WISH_WELL_PLANNING.md). Read this correction before older House 3/8/9 definitions.
+
+> Website source correction (2026-09-24): the founder and current wishwell-pathway README identify `lorraenmadre/wishwell-pathway` as the current lorraenmadre.com source. The production-domain claim below is historical; verify deployment settings before publishing from this repository.
+
 # lorraenmadre.com — homepage
 
 Single self-contained `index.html`. No build step. This repo **is** the site.
