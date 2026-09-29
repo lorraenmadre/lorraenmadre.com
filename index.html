@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <meta charset="utf-8">
-<title>Space for Story Time Club — 365 Family Movie Nights for 2027</title>
+<title>The Wishing Reel — 365 Family Movie Nights for 2027</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="A Google Calendar with one movie or series for every day of 2027. Each event links straight to where that story is streaming, to rent, or to buy — no scrolling through apps — plus a short story note. 365 family movie nights, $13 once.">
 <link rel="canonical" href="https://www.lorraenmadre.com/">
@@ -12,18 +12,18 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lorraen Madre">
 <meta property="og:url" content="https://www.lorraenmadre.com/">
-<meta property="og:title" content="Space for Story Time Club — 365 Family Movie Nights for 2027">
+<meta property="og:title" content="The Wishing Reel — 365 Family Movie Nights for 2027">
 <meta property="og:description" content="One movie or series for every day of 2027, delivered as a Google Calendar. Every event links you to where that story is streaming, to rent, or to buy. $13 once.">
 <meta property="og:image" content="https://www.lorraenmadre.com/brand-assets/hero-poster.jpg">
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="720">
-<meta property="og:image:alt" content="Space for Story Time Club — a cinematic family movie calendar for 2027">
+<meta property="og:image:alt" content="The Wishing Reel — a cinematic family movie calendar for 2027">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Space for Story Time Club — 365 Family Movie Nights for 2027">
+<meta name="twitter:title" content="The Wishing Reel — 365 Family Movie Nights for 2027">
 <meta name="twitter:description" content="One movie or series for every day of 2027 in your Google Calendar, each event linking to where it streams, rents, or sells. $13 once.">
 <meta name="twitter:image" content="https://www.lorraenmadre.com/brand-assets/hero-poster.jpg">
-<meta name="twitter:image:alt" content="Space for Story Time Club — a cinematic family movie calendar for 2027">
+<meta name="twitter:image:alt" content="The Wishing Reel — a cinematic family movie calendar for 2027">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/favicon.svg">
@@ -37,7 +37,7 @@
       "@id": "https://www.lorraenmadre.com/#website",
       "url": "https://www.lorraenmadre.com/",
       "name": "Lorraen Madre",
-      "description": "Space for Story Time Club — 365 family movie nights for 2027, delivered as a Google Calendar."
+      "description": "The Wishing Reel — 365 family movie nights for 2027, delivered as a Google Calendar."
     },
     {
       "@type": "Organization",
@@ -48,8 +48,8 @@
     },
     {
       "@type": "Product",
-      "name": "Space for Story Time Club",
-      "description": "A Google Calendar with one movie or series selected for every day of 2027. Each calendar event includes a link showing where that story is currently available to stream, rent, or buy, plus an optional story note to notice, discuss, or carry into the wider Story Time experience.",
+      "name": "The Wishing Reel",
+      "description": "A Google Calendar with one movie or series selected for every day of 2027. Each calendar event includes a link showing where that story is currently available to stream, rent, or buy, plus an optional story note to notice, discuss, or carry into the wider Wishing Reel experience.",
       "brand": { "@id": "https://www.lorraenmadre.com/#org" },
       "url": "https://www.lorraenmadre.com/",
       "image": "https://www.lorraenmadre.com/brand-assets/hero-poster.jpg",
@@ -73,7 +73,7 @@
 <link rel="stylesheet" href="/brand.css">
 <style>
 /* ============================================================
-   SPACE FOR STORY TIME CHALLENGE
+   THE WISHING REEL
    Display: Belleza · Subheads/labels: Figtree · Body: Mulish
    Structure paced after Aqui / Home Video.
    ============================================================ */
@@ -454,6 +454,33 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
 .cform .note.err{color:var(--red)}
 .connect-done{display:none;font-family:var(--display);font-size:clamp(1.2rem,2.4vw,1.7rem);color:var(--night-ink);line-height:1.4;max-width:30ch}
 
+
+/* ---------- 1½ · the wishing reel — free five-night starter ---------- */
+.hero .free-line{margin-top:.9rem;font-family:var(--sub);font-weight:600;font-size:.8rem;letter-spacing:.03em}
+.hero .free-line a{color:#F7F3EA;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:4px}
+.hero .free-line a:hover{color:var(--gold)}
+.reel-grid{display:grid;gap:clamp(2.25rem,5vw,4rem);grid-template-columns:1fr}
+@media (min-width:900px){.reel-grid{grid-template-columns:1.05fr .95fr;align-items:start}}
+.reel-nights{list-style:none;margin:1.8rem 0 0;padding:0;display:grid;gap:.95rem;max-width:46ch}
+.reel-nights li{display:grid;grid-template-columns:3.2rem 1fr;gap:.2rem .9rem;padding-bottom:.95rem;border-bottom:1px solid var(--night-line)}
+.reel-nights .wk{grid-row:span 2;font-family:var(--sub);font-weight:700;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding-top:.25rem}
+.reel-nights .t{font-family:var(--display);font-size:1.1rem;color:var(--night-ink)}
+.reel-nights .t small{font-family:var(--sans);font-size:.78rem;color:var(--night-ink-2);margin-left:.35rem}
+.reel-nights .q{font-size:.92rem;color:var(--night-ink-2);font-style:italic}
+.reel-gets{list-style:none;padding:0;margin:0 0 1.5rem;display:grid;gap:.6rem}
+.reel-gets li{font-size:.92rem;color:var(--night-ink-2);line-height:1.45;padding-left:1.1rem;position:relative}
+.reel-gets li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.reel-gets b{color:var(--night-ink)}
+.reel-done{display:none}
+.reel-done [hidden]{display:none!important}
+#reel h2.big{margin-bottom:1rem}
+#reel-form .consent{text-transform:none;letter-spacing:0;font-weight:400;font-size:.85rem}
+.reel-done h3{font-family:var(--display);font-weight:400;font-size:clamp(1.3rem,2.4vw,1.7rem);color:var(--night-ink);margin:0 0 .8rem}
+.reel-done p{color:var(--night-ink-2);font-size:.95rem;max-width:40ch}
+.reel-done .acts{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.3rem 0 1rem}
+.reel-done .pill.ghost{--pc:var(--night-ink-2)}
+.reel-done .fine2{font-size:.8rem;color:var(--night-ink-2);opacity:.8}
+
 /* ---------- footer ---------- */
 .foot{background:var(--night);color:var(--night-ink);padding:clamp(3.5rem,8vw,5.5rem) 0 3rem}
 .foot .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.5rem;
@@ -505,13 +532,60 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
     <div class="hero-scrim" aria-hidden="true"></div>
     <div class="hero-inner">
       <span class="eyebrow">Your golden ticket</span>
-      <h1 id="hero-title">SPACE for STORY TIME Challenge</h1>
+      <h1 id="hero-title">The Wishing Reel</h1>
       <p class="tagline">Watch a movie together.<br>Wish for something better.</p>
       <p class="offer"><span>365 stories</span><span class="sep" aria-hidden="true"></span><span>one year</span><span class="sep" aria-hidden="true"></span><span class="price">$13</span></p>
       <div class="cta-row">
         <a class="pill solid" data-link="joinClub" href="#"><svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg>Get the 2027 Calendar — $13<svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <p class="fine">One story a day for all of 2027 — delivered in Google Calendar.</p>
+      <p class="free-line"><a href="#reel">Not ready for a whole year? Start with five free movie nights&nbsp;&rarr;</a></p>
+    </div>
+  </section>
+
+
+  <!-- 1½ · THE WISHING REEL — free five-night starter -->
+  <section class="sec night" id="reel" aria-labelledby="reel-title">
+    <div class="wrap rv reel-grid">
+      <div>
+        <div class="kicker"><span class="eyebrow">Free &middot; five Friday nights</span></div>
+        <h2 class="big" id="reel-title">You don&rsquo;t have to know what to wish.</h2>
+        <p class="lead">Five movie nights land on your family calendar. You press play. The stories do the rest.</p>
+        <ol class="reel-nights">
+          <li><span class="wk">Week 1</span><span class="t">The Kid <small>1921</small></span><span class="q">Who in our house takes care of someone without being asked?</span></li>
+          <li><span class="wk">Week 2</span><span class="t">October Sky <small>1999</small></span><span class="q">If our family built one thing together, what would it be?</span></li>
+          <li><span class="wk">Week 3</span><span class="t">Akeelah and the Bee <small>2006</small></span><span class="q">Who would you want sitting in your front row?</span></li>
+          <li><span class="wk">Week 4</span><span class="t">Hugo <small>2011</small></span><span class="q">What in our house needs fixing, not replacing?</span></li>
+          <li><span class="wk">Bonus</span><span class="t">Sherlock Jr. <small>1924</small></span><span class="q">If you could step into any movie we watched, which one &mdash; and who would you be?</span></li>
+        </ol>
+      </div>
+
+      <div class="connect-panel">
+        <ul class="reel-gets">
+          <li><b>A calendar that shows up for you.</b> Five Friday movie nights, each with one question for the dinner table.</li>
+          <li><b>A seat with the Light Scouts.</b> Trivia, family challenges, and prizes that open doors &mdash; if your family is on Discord. Not on it? You don&rsquo;t need it.</li>
+          <li><b>A reel worth rewatching.</b> Films picked for the talk they start, not the awards they won.</li>
+        </ul>
+        <form class="cform" id="reel-form" novalidate>
+          <div class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label for="rf-website">Leave this empty</label><input id="rf-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <div class="row two">
+            <div class="f"><label for="rf-name">First name <span class="opt">&mdash; optional</span></label><input id="rf-name" name="first_name" type="text" autocomplete="given-name"></div>
+            <div class="f"><label for="rf-email">Email</label><input id="rf-email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <label class="consent"><input type="checkbox" name="consent" value="yes" required> Send me the movie nights and the occasional note from Lorraen Madre.</label>
+          <button type="submit" class="pill solid submit">Shall we press play?<svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <p class="note" id="rf-note" role="status" aria-live="polite"></p>
+        </form>
+        <div class="reel-done" id="reel-done">
+          <h3>Your first movie night is Friday.</h3>
+          <p>Add the five nights to your calendar &mdash; Google, Apple, or Outlook. Each one carries its dinner-table question.</p>
+          <div class="acts">
+            <a class="pill solid" id="reel-ics" href="#" download="the-wishing-reel.ics">Add the five nights<svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="pill ghost" id="reel-discord" href="#" target="_blank" rel="noopener" hidden>Join the Light Scouts</a>
+          </div>
+          <p class="fine2" id="reel-discord-note">No Discord? No problem. The calendar is the whole gift.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -545,7 +619,7 @@ h2.big{font-size:clamp(1.55rem,2.9vw,2.2rem);font-weight:400;max-width:18ch}
           </div>
           <div>
             <dt>Story notes</dt>
-            <dd>Many days include a small something to notice, talk about, or carry into the wider Story Time experience.</dd>
+            <dd>Many days include a small something to notice, talk about, or carry into the wider Wishing Reel experience.</dd>
           </div>
         </dl>
       </div>
@@ -808,7 +882,7 @@ const LINKS = {
   work:      "#connect",                             // Work CTA → shared intake form (same page serves junglebook.lorraenmadre.com)
   play:      "/library/",                            // Play CTA → Lorraen Madre Library
   connect:   "#connect",
-  calendar:  "https://calendar.google.com/calendar/u/0?cid=OTZkNDAwN2Q0NzNmMjFhNmNkMGFlYTFmMjkxZDhiMzY5Mjk0ODI2OGQxOTJkMWFmZDE0Zjg4OWIwYzZhMTgxMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t",   // "Space for Story Time" calendar — delivered after purchase, not a public CTA
+  calendar:  "https://calendar.google.com/calendar/u/0?cid=OTZkNDAwN2Q0NzNmMjFhNmNkMGFlYTFmMjkxZDhiMzY5Mjk0ODI2OGQxOTJkMWFmZDE0Zjg4OWIwYzZhMTgxMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t",   // "The Wishing Reel" (formerly Space for Story Time) calendar — delivered after purchase, not a public CTA
   substack:  "https://wishwisely.substack.com",
   instagram: "https://instagram.com/",
   tiktok:    "https://tiktok.com/",
@@ -834,7 +908,7 @@ const HOUSES = [
   ["09","Ninth House Homeschool","Learning + homeschool.","Learning + homeschool"],
   ["10","Dream Backlog","","Story and Standards"],
   ["11","Waterwine","Systems + infrastructure.","Systems + infrastructure"],
-  ["12","Space for Story Time Challenge","Watch together + wish for something better.","Watch together"]
+  ["12","The Wishing Reel","Watch together + wish for something better.","Watch together"]
 ];
 const HOUSE_BG = { "01": "brand-assets/omw-bg.mp4", "02": "brand-assets/wuu-clock.jpg", "03": "brand-assets/cook-bg.mp4", "04": "brand-assets/lady-cover.jpg", "10": "brand-assets/standards-bg.mp4" };
 const HOUSE_POSTER = { "01": "brand-assets/omw-poster.jpg", "03": "brand-assets/cook-poster.jpg", "10": "brand-assets/standards-poster.jpg" };
@@ -936,6 +1010,65 @@ document.querySelectorAll("[data-link]").forEach(el=>{
 });
 
 document.getElementById("yr").textContent = new Date().getFullYear();
+
+
+/* ============================================================
+   THE WISHING REEL — free five-night starter
+   REEL_ENDPOINT: paste a Google Apps Script /exec URL (or any
+   form webhook) to save signups. Until then the gift still works.
+   REEL_DISCORD: paste the Light Scouts invite to show that button.
+   ============================================================ */
+const REEL_ENDPOINT = "";
+const REEL_DISCORD  = "";
+const REEL_NIGHTS = [
+  ["The Kid (1921)","A found family on a small budget with a very big heart. It's silent, so everyone has to lean in.","Who in our house takes care of someone without being asked?"],
+  ["October Sky (1999)","A coal-town kid builds rockets while the whole town says no.","If our family built one thing together, what would it be?"],
+  ["Akeelah and the Bee (2006)","A girl finds out her gift belongs to her whole neighborhood.","Who would you want sitting in your front row?"],
+  ["Hugo (2011)","A boy repairs broken machines and a broken man.","What in our house needs fixing, not replacing?"],
+  ["Sherlock Jr. (1924)","A projectionist dreams his way into the screen, and the fourth wall breaks for real.","If you could step into any movie we watched, which one, and who would you be?"]
+];
+function reelICS(){
+  const pad=n=>String(n).padStart(2,"0");
+  const stamp=d=>d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate())+"T"+pad(d.getHours())+pad(d.getMinutes())+"00";
+  const esc=t=>t.replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\n/g,"\\n");
+  const now=new Date(); const first=new Date(now);
+  first.setDate(now.getDate()+((5-now.getDay()+7)%7||7)); first.setHours(19,0,0,0);   // next Friday, 7 PM local
+  const utc=new Date().toISOString().replace(/[-:]/g,"").split(".")[0]+"Z";
+  const lines=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Lorraen Madre//The Wishing Reel//EN","CALSCALE:GREGORIAN","X-WR-CALNAME:The Wishing Reel"];
+  REEL_NIGHTS.forEach(([title,why,q],i)=>{
+    const s=new Date(first); s.setDate(first.getDate()+7*i); const e=new Date(s); e.setHours(21);
+    const where="https://www.justwatch.com/us/search?q="+encodeURIComponent(title.replace(/ \(\d{4}\)$/,""));
+    lines.push("BEGIN:VEVENT","UID:wishing-reel-"+(i+1)+"-"+utc+"@lorraenmadre.com","DTSTAMP:"+utc,
+      "DTSTART:"+stamp(s),"DTEND:"+stamp(e),
+      "SUMMARY:"+esc("The Wishing Reel · "+(i<4?"Week "+(i+1):"Bonus")+": "+title),
+      "DESCRIPTION:"+esc(why+"\n\nAt the dinner table: "+q+"\n\nWhere to watch: "+where+"\n\nYou don't have to know what to wish. Just press play.\n— The Wishing Reel · lorraenmadre.com"),
+      "BEGIN:VALARM","ACTION:DISPLAY","DESCRIPTION:Movie night tonight","TRIGGER:-PT3H","END:VALARM","END:VEVENT");
+  });
+  lines.push("END:VCALENDAR");
+  return URL.createObjectURL(new Blob([lines.join("\r\n")],{type:"text/calendar"}));
+}
+(function(){
+  const form=document.getElementById("reel-form"); if(!form) return;
+  const note=document.getElementById("rf-note"), done=document.getElementById("reel-done");
+  form.addEventListener("submit", async e=>{
+    e.preventDefault(); note.className="note";
+    if(!form.checkValidity()){ note.textContent="Just your email and the checkbox, and it's yours."; note.classList.add("err"); form.reportValidity(); return; }
+    if(form.website && form.website.value) return;
+    const btn=form.querySelector(".submit"); if(btn.disabled) return; btn.disabled=true;
+    if(REEL_ENDPOINT){
+      const body=new URLSearchParams(new FormData(form)); body.delete("website");
+      body.append("offer","the-wishing-reel"); body.append("source_site",location.hostname);
+      body.append("source_page",location.href); body.append("submitted_at",new Date().toISOString());
+      try{ await fetch(REEL_ENDPOINT,{method:"POST",mode:"no-cors",body}); }catch(_){}
+    }
+    document.getElementById("reel-ics").href=reelICS();
+    const d=document.getElementById("reel-discord");
+    if(REEL_DISCORD){ d.href=REEL_DISCORD; d.hidden=false; }
+    else { document.getElementById("reel-discord-note").textContent="The Light Scouts Discord opens soon. No Discord? No problem. The calendar is the whole gift."; }
+    form.style.display="none"; done.style.display="block";
+    done.scrollIntoView({behavior:"smooth",block:"center"});
+  });
+})();
 
 /* ============================================================
    CONNECT FORM → Google Sheet (Apps Script web app).
