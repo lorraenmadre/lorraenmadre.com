@@ -879,7 +879,7 @@ if (!location.hash) window.scrollTo(0, 0);
 const LINKS = {
   joinClub:  "https://buy.stripe.com/dRmdR94rv6Di3Y51jA4sE00",   // Stripe Payment Link — $13 one-time (also on the Library card)
   design:    "https://lorraenmadre.app/",             // Design CTA → Lorraen Madre app sign-in (TODO: confirm post-login return param)
-  work:      "#connect",                             // Work CTA → shared intake form (same page serves junglebook.lorraenmadre.com)
+  work:      "#connect",                             // Work CTA → shared intake form (same page serves wishingreel.lorraenmadre.com)
   play:      "/library/",                            // Play CTA → Lorraen Madre Library
   connect:   "#connect",
   calendar:  "https://calendar.google.com/calendar/u/0?cid=OTZkNDAwN2Q0NzNmMjFhNmNkMGFlYTFmMjkxZDhiMzY5Mjk0ODI2OGQxOTJkMWFmZDE0Zjg4OWIwYzZhMTgxMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t",   // "The Wishing Reel" (formerly Space for Story Time) calendar — delivered after purchase, not a public CTA
@@ -1096,7 +1096,7 @@ const CONNECT_ENDPOINT = "";
     if(btn.disabled) return;                               // block double-clicks
     if(form.website && form.website.value) return;         // honeypot: bots only
     const src = document.getElementById("cf-source");
-    if(src) src.value = location.hostname;                 // lorraenmadre.com vs junglebook.lorraenmadre.com
+    if(src) src.value = location.hostname;                 // lorraenmadre.com vs wishingreel.lorraenmadre.com
     const email = (form.email.value||"").trim().toLowerCase();
     const dedupeKey = "lm-connect-sent:" + email;
     let already = false;

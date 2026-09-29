@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "junglebook.lorraenmadre.com"
+        }
+      ],
+      "destination": "https://wishingreel.lorraenmadre.com/:path*",
+      "permanent": true
+    }
+  ]
+}
